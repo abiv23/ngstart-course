@@ -10,7 +10,7 @@ import { TodoService } from "../shared/data-access/todo.service";
         <app-todo-form (todoSubmitted)="todoService.addTodo($event)" />
         <app-todo-list [todos]="todoService.todos()" />
     `,
-    imports: [TodoFormComponent]
+    imports: [TodoListComponent, TodoFormComponent]
 })
 
 export default class HomeComponent {
