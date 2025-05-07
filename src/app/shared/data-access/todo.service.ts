@@ -18,4 +18,8 @@ export class TodoService {
         {...todo, id: Date.now().toString() }
     ]);
   }
+
+  deleteTodo(id: string) {
+    this.#todos.update((todos) => todos.filter(todo => todo.id !== id))
+  }
 }

@@ -8,7 +8,10 @@ import { TodoService } from "../shared/data-access/todo.service";
     template: `
         <h2>Todo</h2>
         <app-todo-form (todoSubmitted)="todoService.addTodo($event)" />
-        <app-todo-list [todos]="todoService.todos()" />
+        <app-todo-list 
+            [todos]="todoService.todos()"
+            (deleteTodo)="todoService.deleteTodo($event)"
+        />
     `,
     imports: [TodoListComponent, TodoFormComponent]
 })
